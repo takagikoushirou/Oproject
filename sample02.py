@@ -58,7 +58,6 @@ def show_obeya_score(frame):
 
 if __name__ == '__main__':
     cap = cv2.VideoCapture("./sample1.mp4")
-    print(cap.isOpened())
     while(True):
         ret, frame = cap.read()
         show_obeya_score(frame)
