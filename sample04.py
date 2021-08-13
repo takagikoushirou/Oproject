@@ -1,4 +1,4 @@
-from google.colab.patches import cv2_imshow
+# from google.colab.patches import cv2_imshow　#google colab
 import cv2
 import numpy as np
 import math
@@ -54,11 +54,13 @@ def show_obeya_score(frame):
     cv2.putText(score_frame, ' '.join([str(score), decision]),
             SCORE_AP, FONT, SCORE_FONT_SIZE, color, SCORE_FONT_WEIGHT, cv2.LINE_AA)
     
-    cv2_imshow(score_frame)
+    # cv2_imshow(score_frame) #google colab
+    cv2.imshow('frame',score_frame) #通常
 
 
 if __name__ == '__main__':
-    cap = cv2.VideoCapture('./drive/MyDrive/google colab/sample1.mp4')
+    # cap = cv2.VideoCapture('./drive/MyDrive/google colab/sample1.mp4') #google colab
+    cap = cv2.VideoCapture('./sample1.mp4') #通常
     while(True):
         ret, frame = cap.read()
         show_obeya_score(frame)
